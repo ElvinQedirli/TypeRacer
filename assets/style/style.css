@@ -1,0 +1,192 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../images/bck.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newtons-cradle {
+    --uib-size: 200px;
+    --uib-speed: 1.2s;
+    --uib-color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--uib-size);
+    height: var(--uib-size);
+}
+
+.newtons-cradle__dot {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+    transform-origin: center top;
+}
+
+.newtons-cradle__dot::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 25%;
+    border-radius: 50%;
+    background-color: var(--uib-color);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px inset;
+    border: 1px solid #555;
+}
+
+.newtons-cradle__dot:first-child {
+    animation: swing var(--uib-speed) linear infinite;
+}
+
+.newtons-cradle__dot:last-child {
+    animation: swing2 var(--uib-speed) linear infinite;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+        animation-timing-function: ease-out;
+    }
+
+    25% {
+        transform: rotate(70deg);
+        animation-timing-function: ease-in;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        animation-timing-function: linear;
+    }
+}
+
+@keyframes swing2 {
+    0% {
+        transform: rotate(0deg);
+        animation-timing-function: linear;
+    }
+
+    50% {
+        transform: rotate(0deg);
+        animation-timing-function: ease-out;
+    }
+
+    75% {
+        transform: rotate(-70deg);
+        animation-timing-function: ease-in;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .newtons-cradle {
+        --uib-size: 150px;
+    }
+}
+
+
+#loading-screen,
+#game-screen,
+#typing-test,
+#results-screen {
+    text-align: center;
+}
+
+#loading-screen h1 {
+    font-size: 2em;
+    color: #fff;
+}
+
+#game-screen,
+#typing-test,
+#results-screen {
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(9.5px);
+    -webkit-backdrop-filter: blur(9.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    width: 97%;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 14px;
+    transition: all ease 0.3s;
+    font-size: 17px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    outline: none;
+    border-radius: 14px;
+    transition: all ease 0.3s;
+    font-size: 17px;
+}
+
+button {
+    background-color: #A31C6B;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#typing-test p {
+    font-size: 1.2em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+#timer {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.correct {
+    text-decoration: line-through;
+    color: red;
+}
+
+.game_name{
+    color: #fff;
+}
+
